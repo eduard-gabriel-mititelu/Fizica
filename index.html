@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mititelu Eduard Gabriel">
+        <meta name="keywords" content="HTML, CSS">
+        <meta http-equiv="refresh" content="300">
+        <script src="https://kit.fontawesome.com/8ba8423b7a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style/style.css">
+        <style>
+
+            .term {
+              display: flex;
+              background-image: url(./img/Wood-texture-Free-Photos-Images-and-Pictures-of-Wooden-texture-raw-free-download-1.jpg.webp);
+              border-radius: 10px;
+              outline: solid 5px #795F55;
+              padding-top: 150px;
+              padding-bottom: 150px;
+              width: 200px;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .slidecontainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 400px;
+                rotate: 270deg;
+            }
+            
+            .temps {
+                display: flex;
+                flex-direction: column;
+                margin: 50px;
+                font-size: 20px;
+                width: 220px;
+            }
+            
+            .slider {
+              -webkit-appearance: none;
+              width: 400px;
+              height: 25px;
+              background: linear-gradient(to left, #ff3b4b,#FDCD05, #26F401);
+              outline: none;
+              -webkit-transition: .2s;
+              transition: opacity .2s;
+              border-radius: 20px;
+            }
+            
+            .slider::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 25px;
+              height: 25px;
+              background: #fff;
+              cursor: pointer;
+              border-radius: 20px;
+            }
+            
+            .slider::-moz-range-thumb {
+              width: 25px;
+              height: 25px;
+              background: #04AA6D;
+              cursor: pointer;
+            }
+            .obj {
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              height: 500px;
+            }
+            table, th, td {
+              border: 3px solid #795F55;
+              border-radius: 10px;
+            }
+            
+            table {
+              width: 400px;
+              margin-top: 20px
+            }
+            
+            td, th {
+              padding: 5px;
+            }
+            
+            th {
+              padding: 5px 10px;
+            }
+            
+            @media only screen and (max-width: 600px) {
+              .slider {
+                width: 400px;
+              }
+            }
+            </style>
+        <title>Termometru</title>
+    </head>
+    <body>
+        <header> <!--header-->
+            <div class="page-title-div"> <!--Div for the header-->
+                <i class="fa-sharp fa-solid fa-bars menu" onclick="showMenu()"></i>
+                <h1 class="page-title">Termometru</h1> <!--Title-->
+                <a class="refresh-link" href="">
+                    <i class="fa-sharp fa-solid fa-rotate-right"></i>
+                </a>
+                
+            </div>
+        </header>
+        <div class="container"> <!--All the page is in this div-->
+            <aside id="asideId"> <!--Aside--> <!--All the links and elements in the aside-->
+                <div>
+                    <a class="aside-a aside-a-1" href="index.html">Termometru</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-2" href="./pages/index3.html">Difuzie</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-3" href="./pages/index2.html">Rezistenta Electrica</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-4" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-5" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-6" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-4" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-5" href="index.htm">Home</a>
+                </div>
+                <br>
+                <div class="aside-div-for-refresh-link">
+                    <a class="refresh-link" href=""><i class="fa-sharp fa-solid fa-rotate-right"></i></a>
+                </div>
+            </aside>
+            <div class="content"> <!--Content's place, where is written the content-->
+                <div class="obj">
+                    <div class="term">
+                      <div class="slidecontainer">
+                        <input type="range" min="0" max="1000" value="500" class="slider" id="myRange">
+                      </div>
+                    </div>
+                    
+                    <div class="temps">
+                      <p>C: <span id="demo"></span></p>
+                      <p>K: <span id="demo2">773</span></p>
+                      <p>F: <span id="demo3">932</span></p>
+                      
+                      <table>
+                        <tr>
+                          <th>C:</th>
+                          <td id="t1">500</td>
+                        </tr>
+                        <tr>
+                          <th>K:</th>
+                          <td><span id="t12">500</span> + 273 = <span id="t2">773</span></td>
+                        </tr>
+                        <tr>
+                          <th>F:</th>
+                          <td><span id="t13">500</span> &#215; 1,8 + 32 = <span id="t3">932</span></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <script>
+                  var slider = document.getElementById("myRange");
+                  var output = document.getElementById("demo");
+                  var output2 = document.getElementById("demo2");
+                  var output3 = document.getElementById("demo3");
+                  var outputt1 = document.getElementById("t1");
+                  var outputt12 = document.getElementById("t12");
+                  var outputt13 = document.getElementById("t13");
+                  var outputt2 = document.getElementById("t2");
+                  var outputt3 = document.getElementById("t3");
+                  output.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output.innerHTML = this.value;
+                    output2.innerHTML = Number(this.value) + 273;
+                    output3.innerHTML = Number(this.value) * 1.8 + 32;
+                    outputt1.innerHTML = this.value;
+                    outputt12.innerHTML = this.value;
+                    outputt13.innerHTML = this.value;
+                    outputt2.innerHTML = Number(this.value) + 273;
+                    outputt3.innerHTML = Number(this.value) * 1.8 + 32;
+                  }
+                  
+                  </script>
+            </div>
+        </div>
+        <footer>    <!--Footer-->
+            
+        </footer>
+        <!--That's the end :)-->
+        <script src="./main.js"></script>
+    </body>
+</html>

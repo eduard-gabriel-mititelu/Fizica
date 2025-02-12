@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    display: inline-block;
+}
+
+.slider::-webkit-slider-thumb {
+    cursor: pointer;
+}
+  
+::-webkit-scrollbar{        /*styling scrollbar*/
+    background-color: #12232e;
+    width: 13px;
+}
+::-webkit-scrollbar-thumb{      /*styling the scrollbar-thumb*/
+    background-color: #070e13;
+}
+body{   /*styling body*/
+    margin: 0;
+    padding: 0;
+}
+.container{     /*styling all the page*/
+    background-color: #070e13;
+    padding-bottom: 17px;
+    padding-right: 20px;
+    padding-top: 17px;
+}
+header{     /*styling header*/
+    background-color: #262c38;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.menu{      /*Styling menu button for small display*/
+    color: #fff;
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+}
+.show{      /*Styling content from menu for small display*/
+    display: block;
+}
+header .page-title-div .page-title{     /*styling title h1*/
+    margin-left: 180px;
+    margin-top: 11px;
+    color: #ffffff;
+    display: inline-block;
+    margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
+}
+header .refresh-link{       /*styling the refresh link*/
+    color: #fff;
+    float: right;
+    margin-right: 50px;
+    margin-top: 18px;
+    font-size: 20px;
+    padding: 5px;
+}
+header .refresh-link:hover{     /*styling the refresh link with hover*/
+    transform: scale(1.4);
+    transition: all 0.3s;
+}
+aside{      /*styling aside*/
+    background: linear-gradient(#0e1c25, #091218);
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    padding-top: 0px;
+    width: 150px;
+}
+aside .aside-a{       /*styling every link from the aside */
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 15px 0;
+}
+aside .aside-a:hover:not(.active){       /*styling every link from the aside with hover*/
+    background-color: #0e1c25;
+    box-shadow: 1px 2px 2px #ffffff;
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+aside .aside-div-for-refresh-link .refresh-link{        /*Styling refresh link from aside*/
+    color: #fff;
+    margin-left: 55px;
+    font-size: 27px;
+    padding: 10px;
+    display: inline-block;
+}
+aside .copy-sign-aside{     /*styling copywrittig sign*/
+    color: #fff;
+    margin-left: 55px;
+    font-size: 30px;
+    padding: 10px;
+    display: inline-block;
+}
+.content{       /*styling the content on the page*/
+    margin-left: 170px;
+    background-color: #12232e;
+    padding: 20px;
+    border: 1px solid #0e1c25;
+    border-radius: 1px;
+    border-radius: 10px;
+}
+
+table {
+    color: #fff;
+}
+
+p{                          /*styling p test lorem*/
+    margin: 0;
+    color: #ffffff;
+}
+footer{                         /*Styling the end of the page*/
+    height: 300px;
+    background-color: #262c38;
+}
+@media (max-width:760px){       /*Styling the small devices version*/
+    header{                 /*styling header*/
+        height: 60px;
+    }
+    header .page-title-div .page-title{     /*Styling title h1*/
+        margin-left: 60px;
+        margin-top: 14px;
+    }
+    .menu{                  /*Styling menu button*/
+        display: block;
+    }
+    header .refresh-link{       /*Styling rfresh link from the header*/
+        display: none;
+    }
+    aside{      /*Styling the aside*/
+        display: none;
+        width: 240px;
+        top: 60px;
+    }
+    aside .aside-div-for-refresh-link .refresh-link{        /*Styling the refresh link from the aside*/
+        display: none;
+    }
+    .content{       /*Styling the content of the page*/
+        margin-left: 20px;
+    }
+}

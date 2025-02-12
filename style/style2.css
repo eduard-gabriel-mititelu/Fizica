@@ -1,0 +1,26 @@
+span {
+    padding: 10px;
+    font-size: 60px;
+    color: #fff;
+}
+
+option:hover {
+    background-color: #adadad
+}
+
+label {
+    font-size: 20px;
+    color: #fff;
+}
+
+.rez {
+    background-color: #663b38;
+    height: 30px;
+    width: 300px;
+    margin: 30px 20px;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

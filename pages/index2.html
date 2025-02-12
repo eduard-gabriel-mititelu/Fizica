@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mititelu Eduard Gabriel">
+        <meta name="keywords" content="HTML, CSS">
+        <meta http-equiv="refresh" content="300">
+        <script src="https://kit.fontawesome.com/8ba8423b7a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/style2.css">
+        <title>Rezistenta Electrica</title>
+    </head>
+    <body>
+        <header> <!--header-->
+            <div class="page-title-div"> <!--Div for the header-->
+                <i class="fa-sharp fa-solid fa-bars menu" onclick="showMenu()"></i>
+                <h1 class="page-title">Rezistenta Electrica</h1> <!--Title-->
+                <a class="refresh-link" href="">
+                    <i class="fa-sharp fa-solid fa-rotate-right"></i>
+                </a>
+                
+            </div>
+        </header>
+        <div class="container"> <!--All the page is in this div-->
+            <aside id="asideId"> <!--Aside--> <!--All the links and elements in the aside-->
+                <div>
+                    <a class="aside-a aside-a-1" href="../index.html">Termometru</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-2" href="../pages/index3.html">Difuzie</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-3" href="./index2.html">Rezistenta Electrica</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-4" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-5" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-6" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-4" href="index.htm">Home</a>
+                </div>
+                <div>
+                    <a class="aside-a aside-a-5" href="index.htm">Home</a>
+                </div>
+                <br>
+                <div class="aside-div-for-refresh-link">
+                    <a class="refresh-link" href=""><i class="fa-sharp fa-solid fa-rotate-right"></i></a>
+                </div>
+            </aside>
+            <div class="content"> <!--Content's place, where is written the content-->
+                <span style="display: flex; align-items: center;">
+                    <span style="color: red;" id="r">R</span>
+                    <span>=</span>
+                    <span style="color: aqua;" id="p">ρ</span>
+                    <span style="font-size: 30px;">x</span>
+                    <span style="display: inline-block;">
+                        <span style="display: flex; flex-direction: column;">
+                            <span id="l" style="border-bottom: 2px solid #fff; color: chartreuse;">𝓁</span>
+                            <span style="color: yellow;" id="s">ѕ</span>
+                        </span>
+                    </span>
+                </span>
+                <select style="width: 100px;" name="" id="">
+                    <option value="Ag">Ag</option>
+                    <option value="Cl">Au</option>
+                    <option value="Ag">Al</option>
+                    <option value="Cl">W</option>
+                    <option value="Ag">Zn</option>
+                    <option value="Cl">Ni</option>
+                    <option value="Ag">Fe</option>
+                    <option value="Cl">Pt</option>
+                    <option value="Ag">Sn</option>
+                    <option value="Cl">Ta</option>
+                    <option value="Ag">Pb</option>
+                </select>
+                <label>𝓁: <input type="range" id="lung" value="5" min="1" max="10"></label><span style="font-size: 20px;" id="bl">5</span>
+                <label>ѕ: <input type="range" id="surf" value="5" min="1" max="10"></label><span style="font-size: 20px;" id="bs">5</span>
+                <h1 style="color: #fff;">R: <span style="font-size: 30px;" id="rez">1.7</span> μΩ</h1>
+                <div id="lungDig" class="rez">S <div id="surfDig" class="rez" style="width: 250px; background-color: #483832; margin: 0px 8px;">𝓁</div></div>
+            </div>
+        </div>
+        <footer>    <!--Footer-->
+            
+        </footer>
+        <!--That's the end :)-->
+        <script src="../main.js"></script>
+    </body>
+</html>
