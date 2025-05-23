@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+html, body {
+    overflow-y: auto;
+    height: auto;
+    scroll-behavior: smooth;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+
+.futuristic-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+}
+
+.neon-title {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    text-align: center;
+}
+
+.lesson-container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.lesson-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.lesson-card {
+    width: 200px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: 0.5s;
+}
+
+.lesson-card:hover {
+    transform: rotateY(10deg) scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.lesson-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.lesson-card img:hover {
+    filter: brightness(1.5);
+}
+
+.footer {
+    width: 100%;
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.glass-effect:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.footer-links ul li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+.neon-text {
+    color: magenta;
+    text-shadow: 0 0 5px magenta, 0 0 10px magenta;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: cyan;
+}
+
+.neon {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+.hero {
+    text-align: center;
+    margin: 50px;
+}
+
+.cta {
+    padding: 10px 30px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    transform: scale(1.1);
+}
+
+.threeD-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+table {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}

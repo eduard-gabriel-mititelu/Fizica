@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulare Gaz Fullscreen</title>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #f5f5f5; }
+    #canvas { background: #fff; display: block; }
+    .controlBox { position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.8); padding: 5px; border-radius: 5px; }
+    .controlBox label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="controlBox">
+    <label for="tempSlider">Temp (°C):</label>
+    <input type="range" id="tempSlider" min="0" max="100" step="1" value="0">
+    <span id="tempDisplay">0</span>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script>
+    let canvasElem = document.getElementById('canvas');
+    let ctx = canvasElem.getContext('2d');
+    let tempSlider = document.getElementById('tempSlider');
+    let tempDisplay = document.getElementById('tempDisplay');
+    
+    let numParticles = 100;
+    let particlesArr = [];
+    let temp = parseInt(tempSlider.value);
+    let moveSpeed = temp / 25;
+    let ballRadius = 8;
+    let draggedParticle = null;
+    let offsetX = 0, offsetY = 0;
+    
+    function setCanvasSize() {
+      canvasElem.width = window.innerWidth;
+      canvasElem.height = window.innerHeight;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+    
+    function getMousePos(evt) {
+      let rect = canvasElem.getBoundingClientRect();
+      return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
+    }
+    
+    function initParticles() {
+      particlesArr = [];
+      for (let i = 0; i < numParticles; i++) {
+        let posX, color;
+        let posY = Math.random() * (canvasElem.height - 2 * ballRadius) + ballRadius;
+        if (i < numParticles / 2) {
+          posX = Math.random() * ((canvasElem.width / 2) - 2 * ballRadius) + ballRadius;
+          color = "#007acc";
+        } else {
+          posX = Math.random() * ((canvasElem.width / 2) - 2 * ballRadius) + canvasElem.width / 2 + ballRadius;
+          color = "#e74c3c";
+        }
+        let velX = Math.random() * 2 - 1;
+        let velY = Math.random() * 2 - 1;
+        particlesArr.push({ x: posX, y: posY, vx: velX, vy: velY, col: color, r: ballRadius });
+      }
+    }
+    
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvasElem.width, canvasElem.height);
+      for (let ball of particlesArr) {
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+        ctx.fillStyle = ball.col;
+        ctx.fill();
+      }
+    }
+    
+    function updateParticles() {
+      for (let ball of particlesArr) {
+        if (ball !== draggedParticle) {
+          ball.x += ball.vx * moveSpeed;
+          ball.y += ball.vy * moveSpeed;
+        }
+        if (ball.x <= ball.r) {
+          ball.x = ball.r;
+          ball.vx = (Math.abs(ball.vx) < 0.1) ? (0.5 + Math.random() * 0.5) : Math.abs(ball.vx);
+        }
+        if (ball.x >= canvasElem.width - ball.r) {
+          ball.x = canvasElem.width - ball.r;
+          ball.vx = (Math.abs(ball.vx) < 0.1) ? -(0.5 + Math.random() * 0.5) : -Math.abs(ball.vx);
+        }
+        if (ball.y <= ball.r) {
+          ball.y = ball.r;
+          ball.vy = (Math.abs(ball.vy) < 0.1) ? (0.5 + Math.random() * 0.5) : Math.abs(ball.vy);
+        }
+        if (ball.y >= canvasElem.height - ball.r) {
+          ball.y = canvasElem.height - ball.r;
+          ball.vy = (Math.abs(ball.vy) < 0.1) ? -(0.5 + Math.random() * 0.5) : -Math.abs(ball.vy);
+        }
+      }
+      
+      for (let i = 0; i < particlesArr.length; i++) {
+        for (let j = i + 1; j < particlesArr.length; j++) {
+          let ball1 = particlesArr[i];
+          let ball2 = particlesArr[j];
+          let dx = ball2.x - ball1.x, dy = ball2.y - ball1.y;
+          let dist = Math.hypot(dx, dy);
+          let minDist = ball1.r + ball2.r;
+          if (dist < minDist) {
+            let nx = dx / dist, ny = dy / dist;
+            let dvx = ball1.vx - ball2.vx, dvy = ball1.vy - ball2.vy;
+            let dot = dvx * nx + dvy * ny;
+            if (dot < 0) {
+              ball1.vx -= dot * nx;
+              ball1.vy -= dot * ny;
+              ball2.vx += dot * nx;
+              ball2.vy += dot * ny;
+            }
+            let overlap = minDist - dist;
+            ball1.x -= (overlap / 2) * nx;
+            ball1.y -= (overlap / 2) * ny;
+            ball2.x += (overlap / 2) * nx;
+            ball2.y += (overlap / 2) * ny;
+          }
+        }
+      }
+    }
+    
+    function animate() {
+      updateParticles();
+      drawParticles();
+      requestAnimationFrame(animate);
+    }
+    
+    canvasElem.addEventListener('mousedown', e => {
+      let pos = getMousePos(e);
+      for (let ball of particlesArr) {
+        let dx = pos.x - ball.x, dy = pos.y - ball.y;
+        if (Math.hypot(dx, dy) < ball.r) {
+          draggedParticle = ball;
+          offsetX = dx;
+          offsetY = dy;
+          break;
+        }
+      }
+    });
+    
+    window.addEventListener('mousemove', e => {
+      if (draggedParticle) {
+        let pos = getMousePos(e);
+        draggedParticle.x = pos.x - offsetX;
+        draggedParticle.y = pos.y - offsetY;
+        draggedParticle.vx = 0;
+        draggedParticle.vy = 0;
+      }
+    });
+    
+    window.addEventListener('mouseup', () => { draggedParticle = null; });
+    
+    tempSlider.addEventListener('input', function() {
+      temp = parseInt(this.value);
+      moveSpeed = temp / 25;
+      tempDisplay.textContent = temp;
+    });
+    
+    initParticles();
+    animate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principiul al II-lea al mecanicii - DigiPhy</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+    <style>
+      .futuristic-physics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: 0.3s;
+    width: 70%;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.neon-title {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+.sim-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+.sim-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px magenta;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Principiul al II-lea al mecanicii<span class="neon">⚡</span></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Physics Simulation -->
+    <main>
+        <section class="futuristic-physics">
+            <div>
+                <h1 class="neon-title">Definiție</h1>
+                <p>Dacă asupra unui corp de masă m acționează o forță F, atunci corpul se va deplasa cu o accelerație a, care are direcția și sensul forței.</p>
+            </div>
+
+            <div>
+                <h1 class="neon-title">Formula</h1>
+                <p style="font-size: 30px;">𝐹 = 𝑚 × 𝑎</p>
+            </div>
+
+            <div class="imulation-container">
+                <button class="sim-button" onclick="start()">Start</button>
+                <button class="sim-button" onclick="pause()">Pauză</button>
+                <button class="sim-button" onclick="reset()">Reset</button>
+                <div id="simulation"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo glass-effect">
+                <h2>Fizica 🚀</h2>
+                <p>&copy; 2025 Fizica. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links glass-effect">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact glass-effect">
+                <h4>Contact Us</h4>
+                <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+                <p>Phone: <span class="neon-text">+40750828689</span></p>
+                <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      let scene, camera, renderer;
+let ballLight, ballHeavy;
+let isRunning = false;
+let v1 = 0, v2 = 0;
+
+const force = 0.02;
+const mass1 = 1;  // Light object
+const mass2 = 4;  // Heavy object
+
+function init() {
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 3, 12);
+    camera.lookAt(0, 0, 0);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.6);
+    
+    document.getElementById("simulation").appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 1));
+
+    ballLight = createBall(0.4, 0x00aaff, -10, -1);
+    ballHeavy = createBall(0.8, 0xff5500, -10, 1);
+
+    animate();
+}
+
+function createBall(radius, color, posX, posZ) {
+    const ball = new THREE.Mesh(
+        new THREE.SphereGeometry(radius, 16, 16),
+        new THREE.MeshBasicMaterial({ color })
+    );
+    ball.position.set(posX, 0, posZ);
+    scene.add(ball);
+    return ball;
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    if (isRunning) {
+        v1 += force / mass1;
+        v2 += force / mass2;
+        ballLight.position.x += v1;
+        ballHeavy.position.x += v2;
+    }
+    renderer.render(scene, camera);
+}
+
+function start() { isRunning = true; }
+function pause() { isRunning = false; }
+function reset() {
+    isRunning = false;
+    v1 = 0; v2 = 0;
+    ballLight.position.x = -10;
+    ballHeavy.position.x = -10;
+}
+
+init();
+    </script>
+   <script src="../main/main.js"></script>
+</body>
+</html>

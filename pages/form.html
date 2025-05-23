@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form 2 - DigiPhy</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        .futuristic-quiz {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.neon-title {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+label {
+    display: block;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+label:hover {
+    text-shadow: 0 0 10px cyan;
+}
+
+.quiz-submit {
+    padding: 10px 30px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 40px;
+}
+
+.quiz-submit:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px magenta;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Quiz Form 2 <span class="neon">🎯</span></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Quiz Section -->
+    <main>
+        <section class="futuristic-quiz">
+            <div>
+                <form id="quizForm">
+                    <h3 class="neon-title">1. Care este cea mai mică temperatură accesibilă?</h3>
+                    <label><input type="radio" name="q1" value="a"> 0°C</label>
+                    <label><input type="radio" name="q1" value="b"> -100°C</label>
+                    <label><input type="radio" name="q1" value="c"> -273.15°C</label>
+
+                    <h3 class="neon-title">2. Variația temperaturii unui corp este de 20°C. Care este valoarea acestei variații în Kelvin?</h3>
+                    <label><input type="radio" name="q2" value="a"> 20K</label>
+                    <label><input type="radio" name="q2" value="b"> 293K</label>
+                    <label><input type="radio" name="q2" value="c"> 576K</label>
+
+                    <h3 class="neon-title">3. Care sunt temperaturile de referință utilizate în scara Fahrenheit?</h3>
+                    <label><input type="radio" name="q3" value="a"> 0°C</label>
+                    <label><input type="radio" name="q3" value="b"> -100°C</label>
+                    <label><input type="radio" name="q3" value="c"> -273.15°C</label>
+
+                    <h3 class="neon-title">4. Dacă l1=2l2 și r1=2r2, care este raportul R1/R2?</h3>
+                    <label><input type="radio" name="q4" value="a"> 20K</label>
+                    <label><input type="radio" name="q4" value="b"> 293K</label>
+                    <label><input type="radio" name="q4" value="c"> 576K</label>
+
+                    <h3 class="neon-title">5. Dacă l1=2l2 și S1=2S2, care este raportul R1/R2?</h3>
+                    <label><input type="radio" name="q5" value="a"> 0°C</label>
+                    <label><input type="radio" name="q5" value="b"> -100°C</label>
+                    <label><input type="radio" name="q5" value="c"> -273.15°C</label>
+
+                    <h2 class="neon-title">6. Alegeți Adevărat sau Fals:</h2>
+                    
+                    <p class="neon-title" style="margin: 0px 20px 0px 20px; color: #fff; font-size: 20px; line-height: 40px;">Difuzia NU apare la corpurile aflate în toate stările de agregare.</p>
+                <select name="q6"><option>Adevărat</option><option>Fals</option></select>
+                <br>
+                <p class="neon-title" style="margin: 0px 20px 0px 20px; color: #fff; font-size: 20px; line-height: 40px;">La o temperatură mai ridicată, viteza de difuzie este mai mare.</p>
+                <select name="q7"><option>Adevărat</option><option>Fals</option></select>
+                <br>
+                <p class="neon-title" style="margin: 0px 20px 0px 20px; color: #fff; font-size: 20px; line-height: 40px;">Difuzia este fenomenul de pătrundere a moleculelor unui corp printre cele ale altui corp.</p>
+                <select name="q8"><option>Adevărat</option><option>Fals</option></select>
+
+                <h3 class="neon-title">7. Ce distanta a parcurs un autoturism in 5 minute,  pornind din repaus, cu acceleratia a=2m/s<sup>2</sup>?</h3>
+                <label><input type="radio" name="q9" value="a"> 300m</label><br>
+                <label><input type="radio" name="q9" value="b"> 600m</label><br>
+                <label><input type="radio" name="q9" value="c"> 1000m</label><br>
+
+                <h3 class="neon-title">8. Ce acceleratie ii va imprima unui corp cu masa m<sub>1</sub>=2kg o forță, care acționând asupra unui corp cu masa m<sub>2</sub>=6kg, îi imprimă o accelerație a=3m/s<sup>2</sup>?</h3>
+                <label><input type="radio" name="q10" value="a"> 9 m/s<sup>2</sup></label><br>
+                <label><input type="radio" name="q10" value="b"> 1 m/s<sup>2</sup></label><br>
+                <label><input type="radio" name="q10" value="c"> 6 m/s<sup>2</sup></label><br>
+                
+
+                <br><br>
+                    <button class="quiz-submit" type="submit">Trimite</button>
+                </form>
+
+                <div id="result"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo glass-effect">
+                <h2>Fizica 🚀</h2>
+                <p>&copy; 2025 Fizica. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links glass-effect">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact glass-effect">
+                <h4>Contact Us</h4>
+                <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+                <p>Phone: <span class="neon-text">+40750828689</span></p>
+                <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+            </div>
+        </div>
+    </footer>
+<script>
+        const correctAnswers = {
+            q1: "c",
+            q2: "a",
+            q3: "b",
+            q4: "c",
+            q5: "b",
+            q6: "Fals",
+            q7: "Adevărat",
+            q8: "Adevărat",
+            q9: "b",
+            q10: "a"
+        };
+
+        const form = document.getElementById("quizForm");
+        const resultDiv = document.getElementById("result");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            let output = `<h2 style="color: #fff;">Rezultate:</h2><ul>`;
+
+            for (let key in correctAnswers) {
+                const userAnswer = form.elements[key].value;
+                localStorage.setItem(key, userAnswer);
+
+                if (userAnswer === correctAnswers[key]) {
+                    output += `<li style="color: green;">Întrebarea ${key.toUpperCase()}: Corect</li>`;
+                    score++;
+                } else {
+                    output += `<li style="color: red;">Întrebarea ${key.toUpperCase()}: Greșit (răspuns corect: ${correctAnswers[key]})</li>`;
+                }
+            }
+
+            output += `</ul><h3 style="color: #fff;">Scor final: ${score} / ${total}</h3>`;
+            resultDiv.innerHTML = output;
+        });
+    </script>
+    <script src="../main/main.js"></script>
+</body>
+</html>

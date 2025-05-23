@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezistenta Electrica - DigiPhy</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        .futuristic-resistance {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.resistance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.resistance-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.neon-red { color: red; text-shadow: 0 0 10px red; }
+.neon-blue { color: aqua; text-shadow: 0 0 10px aqua; }
+.neon-green { color: chartreuse; text-shadow: 0 0 10px chartreuse; }
+.neon-yellow { color: yellow; text-shadow: 0 0 10px yellow; }
+
+.slider-container {
+    margin-top: 20px;
+}
+
+.result-display {
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Rezistenta Electrica <span class="neon">⚡</span></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Resistance Calculator -->
+    <main>
+        <section class="futuristic-resistance">
+            <div class="resistance-container">
+                <span style="display: flex; align-items: center;">
+                    <span class="neon-red" id="r">R</span>
+                    <span>=</span>
+                    <span class="neon-blue" id="p">ρ</span>
+                    <span style="font-size: 30px;">×</span>
+                    <span style="display: inline-block;">
+                        <span style="display: flex; flex-direction: column;">
+                            <span id="l" style="border-bottom: 2px solid" class="neon-green">𝓁</span>
+                            <span id="s" class="neon-yellow">ѕ</span>
+                        </span>
+                    </span>
+                </span> 
+
+                <div class="slider-container">
+                    <label>ρ: <input type="range" id="rezis" value="0.5" step="0.01" min="0.01" max="1.00"></label><span style="font-size: 20px;" id="rl">0.5</span><span style="font-size: 20px;">&#937;cm</span><br>
+                <label>𝓁: <input type="range" id="lung" value="5" min="1" max="10"></label><span style="font-size: 20px;" id="bl">5</span><span style="font-size: 20px;">cm</span><br>
+                <label>ѕ: <input type="range" id="surf" value="5" min="1" max="10"></label><span style="font-size: 20px;" id="bs">5</span><span style="font-size: 20px;">cm<sup>2</sup></span><br>
+                <div id="lungDig" class="rez">S <div id="surfDig" class="rez" style="width: 75px; background-color: #483832; margin: 0px 8px;">𝓁</div></div>
+                </div>
+
+                <h1 class="result-display">R: <span id="rez">1.7</span> μΩ</h1>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo glass-effect">
+                <h2>Fizica 🚀</h2>
+                <p>&copy; 2025 Fizica. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links glass-effect">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact glass-effect">
+                <h4>Contact Us</h4>
+                <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+                <p>Phone: <span class="neon-text">+40750828689</span></p>
+                <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main/main.js"></script>
+</body>
+</html>

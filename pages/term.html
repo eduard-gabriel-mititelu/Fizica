@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termometru - DigiPhy</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+      .term {
+              display: flex;
+              background-image: url(../img/Wood-texture-Free-Photos-Images-and-Pictures-of-Wooden-texture-raw-free-download-1.jpg.webp);
+              border-radius: 10px;
+              outline: solid 5px #795F55;
+              padding-top: 150px;
+              padding-bottom: 150px;
+              width: 200px;
+              justify-content: center;
+              align-items: center;
+            }
+            
+            .slidecontainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 400px;
+                rotate: 270deg;
+            }
+            
+            .temps {
+                display: flex;
+                flex-direction: column;
+                margin: 50px;
+                font-size: 20px;
+                width: 220px;
+            }
+
+            table {
+              width: 400px;
+              margin-top: 20px;
+              border: 3px solid #fff;
+              border-collapse: collapse;
+            }
+            
+            td, th {
+              padding: 10px;
+              border: 5px solid #fff;
+            }
+            
+            th {
+              padding: 5px 10px;
+            }
+
+            .obj {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 50px;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Termometru <span class="neon">🔥</span></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Thermometer Section -->
+    <main>
+        <div class="obj">
+                    <div class="term">
+                      <div class="slidecontainer">
+                        <input type="range" min="0" max="1000" value="500" class="slider" id="myRange">
+                      </div>
+                    </div>
+                    
+                    <div class="temps">
+                      <p>C: <span id="demo"></span></p>
+                      <p>K: <span id="demo2">773</span></p>
+                      <p>F: <span id="demo3">932</span></p>
+                      
+                      <table>
+                        <tr>
+                          <th>C:</th>
+                          <td id="t1">500</td>
+                        </tr>
+                        <tr>
+                          <th>K:</th>
+                          <td><span id="t12">500</span> + 273 = <span id="t2">773</span></td>
+                        </tr>
+                        <tr>
+                          <th>F:</th>
+                          <td><span id="t13">500</span> &#215; 1,8 + 32 = <span id="t3">932</span></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <script>
+                  var slider = document.getElementById("myRange");
+                  var output = document.getElementById("demo");
+                  var output2 = document.getElementById("demo2");
+                  var output3 = document.getElementById("demo3");
+                  var outputt1 = document.getElementById("t1");
+                  var outputt12 = document.getElementById("t12");
+                  var outputt13 = document.getElementById("t13");
+                  var outputt2 = document.getElementById("t2");
+                  var outputt3 = document.getElementById("t3");
+                  output.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output.innerHTML = this.value;
+                    output2.innerHTML = (Number(this.value) + 273).toFixed(2);
+                    output3.innerHTML = (Number(this.value) * 1.8 + 32).toFixed(2);
+                    outputt1.innerHTML = this.value;
+                    outputt12.innerHTML = this.value;
+                    outputt13.innerHTML = this.value;
+                    outputt2.innerHTML = (Number(this.value) + 273).toFixed(2);
+                    outputt3.innerHTML = (Number(this.value) * 1.8 + 32).toFixed(2);
+                  }
+                  
+                  function showMenu(){
+                      document.getElementById('asideId').classList.toggle('show');
+                  }
+                  </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo glass-effect">
+                <h2>Fizica 🚀</h2>
+                <p>&copy; 2025 Fizica. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links glass-effect">
+                <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                <li><a href="./term.html">Termometru</a></li>
+                <li><a href="./index3.html">Difuzie</a></li>
+                <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                <li><a href="./form.html">Quiz Form</a></li>
+                <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                <li><a href="./newt3.html">Principiul acțiunii și reacțiunii</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-contact glass-effect">
+                <h4>Contact Us</h4>
+                <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+                <p>Phone: <span class="neon-text">+40750828689</span></p>
+                <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main/main.js"></script>
+</body>
+</html>

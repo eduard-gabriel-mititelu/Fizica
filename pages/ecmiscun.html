@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuatia Miscarii - DigiPhy</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>.futuristic-motion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: 0.3s;
+    width: 70%;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.neon-title {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+.motion-image {
+    width: 400px;
+    transition: 0.3s;
+}
+
+.motion-image:hover {
+    filter: brightness(1.3);
+}
+
+.motion-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%; 
+}
+
+.motion-button {
+    padding: 10px 30px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 40px;
+}
+
+.motion-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px magenta;
+}</style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Ecuatia Miscarii <span class="neon">🚀</span></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Motion Explanation -->
+    <main>
+        <section class="futuristic-motion">
+            <div style="margin: 20px;">
+              <h2 class="neon-title">Ce este miscarea uniforma?</h2>
+              <p style="font-size: 25px;">Mișcarea rectilinie uniform variată este mișcarea unui mobil pe o traiectorie rectilinie și cu accelerație constantă.</p>
+              <h2 class="neon-title">Legea de mişcare în mişcarea rectilinie uniform variată are forma:</h2>
+              <img style="margin: 40px; width: 400px;" src="../img/Screenshot 2025-05-22 114524.png" alt="">
+              <h2 class="neon-title">Unde: </h2>
+              <ul style="font-size: 25px; color: #fff; list-style: none;">
+                <li>x este coordonata corpului la momentul t;</li>
+                <li>x<sub>0</sub> este coordonata corpului la momentul iniţial t<sub>0</sub>;</li>
+                <li>v<sub>0</sub> este viteza iniţială a corpului;</li>
+                <li>a este acceleraţia corpului;</li>
+              </ul>
+              <h2 class="neon-title">Dacă t0 = 0 atunci legea de mişcare va avea forma:</h2>
+              <img style="margin: 40px; width: 400px;" src="../img/Screenshot 2025-05-22 165841.png" alt="">
+              <p style="font-size: 25px; display: block;">Legea de mişcare <mark>x = f(t)</mark> se reprezintă grafic printr-o porţiune de parabolă (x depinde de pătratul timpului)</p>
+              <img style="width: 100%; margin: 40px 40px 40px 0px;" src="../img/Screenshot 2025-05-22 170657.png" alt="">
+            </div>
+
+            <form class="motion-form" id="form">
+                <label>x₀ (m): <input type="number" id="poz" value="0" step="1"></label>
+                <label>v₀ (m/s): <input type="number" id="viteza" value="2" step="0.1"></label>
+                <label>a (m/s²): <input type="number" id="accel" value="1" step="0.1"></label>
+                <label>Timp max (s): <input type="number" id="timp" value="10" step="1" min="1"></label>
+                <button class="motion-button" type="submit">Desenează Graficul</button>
+            </form>
+
+            <canvas id="canvas" width="800" height="500"></canvas>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo glass-effect">
+                <h2>Fizica 🚀</h2>
+                <p>&copy; 2025 Fizica. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links glass-effect">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Pornire</a></li>
+                  <li><a href="./term.html">Termometru</a></li>
+                  <li><a href="./index3.html">Difuzie</a></li>
+                  <li><a href="./index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./form.html">Quiz Form</a></li>
+                  <li><a href="./ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact glass-effect">
+                <h4>Contact Us</h4>
+                <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+                <p>Phone: <span class="neon-text">+40750828689</span></p>
+                <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+const origine = { x: 100, y: 400 };
+const scalaX = 50;
+const scalaY = 5;
+
+function deseneazaGrafic(x0, v0, a, tMax) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    for (let t = 0; t <= tMax; t += 0.1) {
+        const x = x0 + v0 * t + 0.5 * a * t * t;
+        const canvasX = origine.x + t * scalaX;
+        const canvasY = origine.y - x * scalaY;
+
+        t === 0 ? ctx.moveTo(canvasX, canvasY) : ctx.lineTo(canvasX, canvasY);
+    }
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+}
+
+document.getElementById("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const x0 = parseFloat(document.getElementById("poz").value);
+    const v0 = parseFloat(document.getElementById("viteza").value);
+    const a = parseFloat(document.getElementById("accel").value);
+    const tMax = parseInt(document.getElementById("timp").value);
+    deseneazaGrafic(x0, v0, a, tMax);
+});
+
+deseneazaGrafic(0, 2, 1, 10);
+    </script>
+    <script src="../main/main.js"></script>
+</body>
+</html>

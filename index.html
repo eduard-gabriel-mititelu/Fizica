@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiPhy - The Future of Learning</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: cyan;
+}
+
+.neon {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+.hero {
+    text-align: center;
+    margin: 50px;
+}
+
+.cta {
+    padding: 10px 30px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    transform: scale(1.1);
+}
+
+.threeD-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">DigiPhy <span class="neon">Future</span></h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Pornire</a></li>
+                  <li><a href="./pages/term.html">Termometru</a></li>
+                  <li><a href="./pages/index3.html">Difuzie</a></li>
+                  <li><a href="./pages/index2.html">Rezistenta Electrica</a></li>
+                  <li><a href="./pages/form.html">Quiz Form</a></li>
+                  <li><a href="./pages/ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                  <li><a href="./pages/net2.html">Principiul al II-lea al mecanicii</a></li>
+                  <li><a href="./pages/newt3.html">Principiul acțiunii și reacțiunii (Principiul acțiunilor reciproce)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="hero">
+            <h2>Fizica intalneste viitorul 🚀</h2>
+            <p>Explorați modele 3D interactive, simulări de fizică în direct și animații futuriste care vă ajută să **vizualizați** știința ca niciodată.</p>
+            <a href="#main"><button class="cta">Sa incepem</button></a>
+        </section>
+
+
+    <div id="main" class="lesson-container">
+        <h1 class="neon-title">Modelele Noastre de Lecții:</h1>
+        <div class="lesson-grid">
+            <div class="lesson-card">
+                <a href="./pages/term.html">
+                    <img src="./img/Screenshot 2025-05-21 115821.png" alt="Termometru">
+                </a>
+                <p>Termometru</p>
+            </div>
+            <div class="lesson-card">
+                <a href="./pages/index3.html">
+                    <img src="./img/Screenshot 2025-05-21 115848.png" alt="Difuzie">
+                </a>
+                <p>Difuzie</p>
+            </div>
+            <div class="lesson-card">
+                <a href="./pages/index2.html">
+                    <img src="./img/Screenshot 2025-05-21 115902.png" alt="Rezistență Electrică">
+                </a>
+                <p>Rezistență Electrică</p>
+            </div>
+            <div class="lesson-card">
+                <a href="./pages/ecmiscun.html">
+                    <img src="./img/Screenshot 2025-05-21 115911.png" alt="Ecuatia miscarii uniforme">
+                </a>
+                <p>Ecuatia mișcării uniforme variate</p>
+            </div>
+            <div class="lesson-card">
+                <a href="./pages/net2.html">
+                    <img src="./img/Screenshot 2025-05-21 115942.png" alt="Principiul al II-lea">
+                </a>
+                <p>Principiul al II-lea al mecanicii</p>
+            </div>
+            <div class="lesson-card">
+                <a href="./pages/newt3.html">
+                    <img src="./img/Screenshot 2025-05-21 115955.png" alt="Principiul acțiunii și reacțiunii">
+                </a>
+                <p>Principiul acțiunii și reacțiunii</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Interactive 3D Model -->
+        <section class="threeD-container">
+            <canvas id="threeD"></canvas>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo glass-effect">
+            <h2>Fizica 🚀</h2>
+            <p>&copy; 2025 Fizica. All rights reserved.</p>
+        </div>
+
+        <div class="footer-links glass-effect">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="./index.html">Pornire</a></li>
+                <li><a href="./pages/term.html">Termometru</a></li>
+                <li><a href="./pages/index3.html">Difuzie</a></li>
+                <li><a href="./pages/index2.html">Rezistenta Electrica</a></li>
+                <li><a href="./pages/form.html">Quiz Form</a></li>
+                <li><a href="./pages/ecmiscun.html">Ecuatia miscarii uniforme variate</a></li>
+                <li><a href="./pages/net2.html">Principiul al II-lea al mecanicii</a></li>
+                <li><a href="./pages/newt3.html">Principiul acțiunii și reacțiunii</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact glass-effect">
+            <h4>Contact Us</h4>
+            <p>Email: <span class="neon-text">mititelueduard2008@gmail.com</span></p>
+            <p>Phone: <span class="neon-text">+40750828689</span></p>
+            <p>Address: <span class="neon-text">76 Green Street, Mehedinti, Romania</span></p>
+        </div>
+    </div>
+</footer>
+
+    <script src="main/main.js"></script>
+    <script>
+        // Particles.js - Futuristic Background
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 100 },
+        shape: { type: "circle" },
+        color: { value: "#ffffff" },
+        size: { value: 3 },
+        move: { speed: 4 }
+    }
+});
+
+// Three.js - 3D Physics Model
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threeD') });
+
+renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+document.body.appendChild(renderer.domElement);
+
+const geometry = new THREE.SphereGeometry(1, 32, 32);
+const material = new THREE.MeshStandardMaterial({ color: 'magenta', emissive: 'cyan' });
+const sphere = new THREE.Mesh(geometry, material);
+
+scene.add(sphere);
+camera.position.z = 5;
+
+const animate = () => {
+    requestAnimationFrame(animate);
+    sphere.rotation.y += 0.01;
+    renderer.render(scene, camera);
+};
+animate();
+    </script>
+</body>
+</html>
